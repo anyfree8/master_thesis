@@ -1,0 +1,74 @@
+% ОБЯЗАТЕЛЬНО ИМЕННО ТАКОЙ documentclass!
+% (Основной кегль = 14pt, поэтому необходим extsizes)
+% Формат, разумеется, А4
+% article потому что стандарт не подразумевает разделов
+% Глава = section, Параграф = subsection
+% (понятия "глава" и "параграф" из документа, описывающего диплом)
+\documentclass[a4paper,article,14pt]{extarticle}
+\usepackage[numbers]{natbib}
+
+% Подключаем главный пакет со всем необходимым
+\usepackage{spbu_diploma/spbudiploma_tempora}
+
+% Пакеты по желанию (самые распространенные)
+% Хитрые мат. символы
+\usepackage{euscript}
+% Таблицы
+\usepackage{longtable}
+\usepackage{makecell}
+% Картинки (можно встявлять даже pdf)
+\usepackage[pdftex]{graphicx}
+
+\usepackage{amsthm,amssymb, amsmath}
+\usepackage{textcomp}
+%\usepackage[russian]{babel}
+
+
+\begin{document}
+
+% Титульник в файле titlepage.tex
+\input{spbu_diploma/titlepage_example.tex}
+
+% Содержание
+\tableofcontents
+\pagebreak
+
+\specialsection{Введение}
+
+\input{src/01 INTRODUCTION/introduction.tex}
+\pagebreak
+
+
+% \specialsection{Постановка задачи}
+% \input{src/02 PROBLEM STATEMENT/problem.tex}
+% \pagebreak
+
+\specialsection{Обзор литературы}
+
+\input{src/03 LITERATURE REVIEW/review.tex}
+\pagebreak
+
+
+\input{src/CHAPTERS/1_chapter.tex}
+
+\specialsection{Выводы}
+\input{src/05 RESULTS/results.tex}
+\pagebreak
+
+\specialsection{Заключение}
+\input{src/06 CONCLUSION/conclusion.tex}
+\pagebreak
+
+% Библиография в cpsconf стиле
+% Аргумент {1} ниже включает переопределенный стиль с выравниванием слева
+% \input{bibliography/bibliography.tex}
+
+
+... см. классические модели Pareto/NBD и их развитие \cite{fader2005counting,schmittlein1987,schmittlein1987customer,fader2010}.
+
+
+\bibliographystyle{ACM-Reference-Format}      % стиль оформления
+% \bibliographystyle{ieeetr}      % или unsrt, acm, gost2008s и др.
+\bibliography{references}       % если файл называется references.bib
+
+\end{document}
