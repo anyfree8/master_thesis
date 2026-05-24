@@ -6,6 +6,9 @@
 % (понятия "глава" и "параграф" из документа, описывающего диплом)
 \documentclass[a4paper,article,14pt]{extarticle}
 \usepackage[numbers]{natbib}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage{xcolor}  % <-- ЭТО СТРОКА НУЖНА
 
 % Подключаем главный пакет со всем необходимым
 \usepackage{spbu_diploma/spbudiploma_tempora}
@@ -39,9 +42,9 @@
 \pagebreak
 
 
-% \specialsection{Постановка задачи}
-% \input{src/02 PROBLEM STATEMENT/problem.tex}
-% \pagebreak
+\specialsection{Постановка задачи}
+\input{src/02 PROBLEM STATEMENT/problem.tex}
+\pagebreak
 
 \specialsection{Обзор литературы}
 
@@ -49,7 +52,9 @@
 \pagebreak
 
 
-\input{src/CHAPTERS/1_chapter.tex}
+% \input{src/CHAPTERS/1_chapter.tex}
+\input{src/CHAPTERS/setup.tex}
+\pagebreak
 
 \specialsection{Выводы}
 \input{src/05 RESULTS/results.tex}

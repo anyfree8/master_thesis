@@ -332,3 +332,6 @@ TSWLatexianTemp*
 
 # Extra
 *(deprecated).tex
+*.text
+
+.DS_Store
